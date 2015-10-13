@@ -42,7 +42,7 @@ simpleWindow.env(
 ```js
 var simpleWindow = require('can-simple-window');
 
-var document = SimpleWindow.document('<h1>can-compile</h1><span class="foo"><b>FOO</b></span>');
+var document = simpleWindow.document('<h1>can-compile</h1><span class="foo"><b>FOO</b></span>');
 document.getElementsByTagName('h1'); //-> [ H1 DOM Element ]
 document.getElementsByClassName("foo"); //-> [ SPAN.foo DOM Element ]
 ```
