@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run jshint && npm run mocha",
     "jshint": "jshint lib/. test/. --config",
-    "mocha": "mocha --reporter Spec test/",
+    "mocha": "mocha test/",
     "publish": "git push origin --tags",
     "release:prerelease": "npm version prerelease && npm publish",
     "release:patch": "npm version patch && npm publish",
