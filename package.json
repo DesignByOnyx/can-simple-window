@@ -4,7 +4,9 @@
   "description": "A very light-weight execution context wrapper for can-simple-dom",
   "main": "lib/can-simple-window.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run jshint && npm run mocha",
+    "jshint": "jshint lib/. test/. --config",
+    "mocha": "mocha --reporter Spec test/",
     "publish": "git push origin --tags",
     "release:prerelease": "npm version prerelease && npm publish",
     "release:patch": "npm version patch && npm publish",
