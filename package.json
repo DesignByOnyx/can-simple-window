@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/DesignByOnyx/can-simple-window",
   "dependencies": {
-    "can-simple-dom": "^0.2.16"
+    "can-simple-dom": "^0.2.21"
   },
   "devDependencies": {
     "jshint": "^2.8.0",
