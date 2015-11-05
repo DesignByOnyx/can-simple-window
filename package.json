@@ -1,7 +1,7 @@
 {
   "name": "can-simple-window",
-  "version": "0.0.1",
-  "description": "A very light-weight execution context wrapper for can-simple-dom",
+  "version": "0.0.2",
+  "description": "A very light-weight execution context (window) wrapper for can-simple-dom",
   "main": "lib/can-simple-window.js",
   "scripts": {
     "test": "npm run jshint && npm run mocha",
@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/DesignByOnyx/can-simple-window.git"
+    "url": "https://github.com/canjs/can-simple-window.git"
   },
   "author": "Ryan Wheale",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DesignByOnyx/can-simple-window/issues"
+    "url": "https://github.com/canjs/can-simple-window/issues"
   },
-  "homepage": "https://github.com/DesignByOnyx/can-simple-window",
+  "homepage": "https://github.com/canjs/can-simple-window",
   "dependencies": {
     "can-simple-dom": "^0.2.21"
   },

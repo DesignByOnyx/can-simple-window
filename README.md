@@ -1,5 +1,5 @@
 # can-simple-window
-A very simple, light-weight execution context which wraps around [can-simple-dom](https://github.com/canjs/can-simple-dom). This module allows for both jQuery and CanJS (and other scripts) to be loaded in a NodeJS environment by creating a faux browser window in which the scripts are executed. Other scripts can be loaded as well.
+A very simple, light-weight execution context (eg. browser window) which wraps around [can-simple-dom](https://github.com/canjs/can-simple-dom). This module allows for both jQuery, CanJS, ReactJS, and other scripts to be loaded in a NodeJS environment by creating a faux browser window in which the scripts are executed. A very basic implementation of the DOM API is provided by can-simple-dom.
 
 The API was designed to be a drop in replacement for very simple [jsdom](https://github.com/tmpvar/jsdom) implementations. Please note that this does not support the *entire* `jsdom` API and that `can-simple-dom` is a very limited implementation of the WHATWG DOM specification. If you are looking for an environment which more closely resembles a real browser, please use `jsdom` - it is a wonderful library.
 
