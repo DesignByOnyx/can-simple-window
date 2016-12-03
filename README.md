@@ -12,7 +12,7 @@ var simpleWindow = require('can-simple-window');
 simpleWindow.env(
 	'<h1>Hello World!</h1><span class="foo"><b>BAR!</b></span>',
 	['http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-	'http://canjs.com/release/2.2.9/can.jquery.min.js'],
+	'http://v2.canjs.com/release/2.2.9/can.jquery.min.js'],
 	function (err, window) {
 	   if (err) throw new Error(err);
 	   
