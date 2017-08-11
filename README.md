@@ -1,54 +1,25 @@
 # can-simple-window
+
+[![Join the chat at https://gitter.im/canjs/canjs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/canjs/canjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/canjs/can-simple-window/blob/master/LICENSE.md)
+[![npm version](https://badge.fury.io/js/can-simple-window.svg)](https://www.npmjs.com/package/can-simple-window)
+[![Travis build status](https://travis-ci.org/canjs/can-simple-window.svg?branch=master)](https://travis-ci.org/canjs/can-simple-window)
+
 A very simple, light-weight execution context (eg. browser window) which wraps around [can-simple-dom](https://github.com/canjs/can-simple-dom). This module allows for both jQuery, CanJS, ReactJS, and other scripts to be loaded in a NodeJS environment by creating a faux browser window in which the scripts are executed. A very basic implementation of the DOM API is provided by can-simple-dom.
 
-The API was designed to be a drop in replacement for very simple [jsdom](https://github.com/tmpvar/jsdom) implementations. Please note that this does not support the *entire* `jsdom` API and that `can-simple-dom` is a very limited implementation of the WHATWG DOM specification. If you are looking for an environment which more closely resembles a real browser, please use `jsdom` - it is a wonderful library.
+## Documentation
 
-##simpleWindow.env(html [, scripts], callback);
-**Replacement for `jsdom.env`**
+Read the [API docs on CanJS.com](https://canjs.com/doc/can-simple-window.html).
 
-```js
-var simpleWindow = require('can-simple-window');
+## Changelog
 
-simpleWindow.env(
-	'<h1>Hello World!</h1><span class="foo"><b>BAR!</b></span>',
-	['http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-	'http://canjs.com/release/2.2.9/can.jquery.min.js'],
-	function (err, window) {
-	   if (err) throw new Error(err);
-	   
-		window.$('h1').text(); //-> Hello World!
-		window.$('.foo').html(); //-> <b>BAR!</b>
-		window.can; //-> Reference to CanJS object
-	}
-);
-```
+See the [latest releases on GitHub](https://github.com/canjs/can-simple-window/releases).
 
-**Differences from jsdom**
+## Contributing
 
-- You can only pass HTML in the first parameter (no URLs or file paths)
-    - The html passed in is only attached to the `<body>` - no `<head>` code will be processed.
-    - `<script>`, `<img>`, `<link>`, `<frame>`, and `<iframe>` sources will not be loaded or processed.
-- There is no `config` object - so the following are invalid:
+The [contribution guide](https://github.com/canjs/can-simple-window/blob/master/CONTRIBUTING.md) has information on getting help, reporting bugs, developing locally, and more.
 
-    ```js
-    simpleWindow.env({ config_object });
-    simpleWindow.env("<b>foo</b>", 'script.js', { config_object }, ...);
-    ```
-- There are no lifecycle events for `created` or `onLoad`
+## License
 
-##simpleWindow.document(html);
-**Replacement for `jsdom.jsdom`**
+[MIT](https://github.com/canjs/can-simple-window/blob/master/LICENSE.md)
 
-```js
-var simpleWindow = require('can-simple-window');
-
-var document = simpleWindow.document('<h1>Hello World!</h1><span class="foo"><b>BAR!</b></span>');
-document.getElementsByTagName('h1'); //-> [ H1 DOM Element ]
-document.getElementsByClassName("foo"); //-> [ SPAN.foo DOM Element ]
-```
-
-**Differences from jsdom**
-
-- The html passed in is only attached to the `<body>` - no `<head>` code will be processed.
-- `<script>`, `<img>`, `<link>`, `<frame>`, and `<iframe>` sources will not be loaded.
-- There is no `options` parameter implemented.
